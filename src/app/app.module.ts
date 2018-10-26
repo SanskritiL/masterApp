@@ -74,6 +74,7 @@ const firebaseAuth = {
     StudenthomePage,
     ForgotpwPage,
     SubmitPage
+    //new comment to see
   ],
   //repo
   providers: [
