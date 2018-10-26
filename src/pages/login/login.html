@@ -1,0 +1,47 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title >Welcome to Quizy</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class= "home">
+    <ion-list margin>
+
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="text" #username></ion-input>
+        </ion-item>
+        
+        <ion-item >
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" #password></ion-input>
+        </ion-item>
+      
+      </ion-list>
+
+
+     
+
+        <button ion-button icon-start color="go" margin (click)="signIn()">
+            <ion-icon name="checkmark"></ion-icon>
+            Login
+          </button>
+
+          <button ion-button icon-start color="danger" (click)="register()" >
+              <ion-icon name="create"></ion-icon>
+              Register
+            </button> 
+        <button class="forgot"ion-button icon-start color="lightcoral" (click)="resetpw()">
+          <ion-icon name ="sad"></ion-icon>
+           Forgot Password
+        </button>
+</ion-content>

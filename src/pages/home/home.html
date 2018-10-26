@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+          
+       Quizy
+       <img id="logo" height="40" src="assets/imgs/monster.png" > 
+       
+      </ion-title>
+      
+        <button ion-button icon-only menuToggle>
+          <ion-icon name='menu'></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class= "home">
+  
+    
+  <h2 class="display-name">Howdy</h2>
+
+  <div class="container">
+  <img class="animated swing teacher" src="assets/imgs/quizguy.jpg">
+   
+
+
+<div class="grid">
+    <ion-list>
+   <ion-item>
+     <ion-label id="quizcode"color="input">Create Quiz</ion-label>
+     <ion-input placeholder="QuizCode001" [(ngModel)]="quizCode.code"></ion-input>
+     </ion-item>
+</ion-list>
+<button ion-button icon-only clear (click)="onclick(quizCode)"><ion-icon name="md-arrow-dropright-circle"></ion-icon></button>
+</div>
+</div>
+</ion-content>

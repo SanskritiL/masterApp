@@ -1,0 +1,61 @@
+<!--
+  Generated template for the ModePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-menu [content]="content"></ion-menu>
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     Quizy
+     
+     <img id="logo" height="40" src="assets/imgs/monster.png" > 
+     
+    </ion-title>
+    
+      <button ion-button icon-only menuToggle>
+        <ion-icon name='menu'></ion-icon>
+      </button>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="home">
+ 
+  <ion-list radio-group [(ngModel)] = "mode">
+    
+      <h2 padding> Select Mode: </h2> 
+    
+  <div class= "items" >
+    <div class="item1">
+     
+    <img class= "animated pulse img1" src="assets/imgs/teacher.jpg">
+    
+    <ion-item>
+     <ion-label>Teacher</ion-label>
+    <ion-radio name="radio" value="teacher"></ion-radio>
+  </ion-item>
+
+</div>
+
+
+  <br>
+ 
+      
+   <div class="item2">
+    <img class="animated pulse img2" src="assets/imgs/student.jpg">
+    <ion-item>
+        <ion-label>Student</ion-label>
+       <ion-radio name="radio" value="student" ></ion-radio>
+     </ion-item>
+    </div>
+  </div>  
+  </ion-list>
+
+  <button class="continue" padding ion-button icon-start color="go" (click)="continueToPage()" >
+    <ion-icon  name="arrow-dropright-circle"></ion-icon>
+    Ready
+  </button> 
+
+</ion-content>

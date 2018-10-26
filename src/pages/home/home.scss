@@ -1,0 +1,54 @@
+page-home {
+ 
+    .container{
+        margin:auto;
+        width:90%;
+        
+        
+    }
+    .grid{
+        display:inline-block;
+        
+       
+    } 
+
+.teacher{
+    
+     margin:auto;
+     margin-top:30px;
+     display: block;
+     width:85%;
+     animation-duration:3s;
+     animation-iteration-count:1;
+    
+ }
+ 
+ .home h2{
+    font-size:20px;
+    padding-right:0px;
+  
+}
+
+ ion-list{
+     text-align:left;
+     padding-top:30px;
+     width: 79%;
+    position: relative;
+     
+ }
+
+
+
+.container .button{
+    box-sizing: border-box;
+     float:right;
+     font-size:37px;
+    width: 10px;
+     height:45px;
+     color:green;
+     margin-right: 5%;
+     bottom:65px;
+   
+   
+ }
+ }
