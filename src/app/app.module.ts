@@ -20,6 +20,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { SubmitPage } from '../pages/submit/submit';
+
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 const firebaseAuth = {
   apiKey: "AIzaSyAxmfAkO59ADMlC2ro6a3pz8wQhjpE5AhI",

@@ -18,7 +18,7 @@ import { StudenthomePage } from '../pages/studenthome/studenthome';
 })
 export class MyApp {
   
-  rootPage:any = StudenthomePage;
+  rootPage:any = LoginPage;
   @ViewChild(Nav) nav: Nav;
 
   pages: Array<{ title: string, component: any, icon: string}>;
@@ -46,6 +46,9 @@ export class MyApp {
     });
   }
   openPage(page){
+
+
+    //console.log(page.title);
     this.nav.setRoot(page.component);
   }
 }

@@ -18,41 +18,49 @@ import { ForgotpwPage } from '../forgotpw/forgotpw';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
-@ViewChild('username') user;
-@ViewChild('password') password;
-
- registerpage = RegisterPage;
-  constructor( public alertCtrl: AlertController ,private fire:AngularFireAuth ,public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  showAlert(message:string){
-   const alert = this.alertCtrl.create({
-    title: 'Info',
-    subTitle: message,
-    buttons: ['OK']
-}); 
-alert.present();
-  }
- 
-
-
-signIn(){
-  this.fire.auth.signInWithEmailAndPassword(this.user.value, this.password.value)
-  .then(data => {
-    console.log('got some data' , data);
-    this.showAlert('Hi!  '+this.user.value + ' Success You\'re logged in');
-    this.navCtrl.push(ModePage);
-    //user os logged in 
-  })
-  .catch(error => {
-    console.log('got an error',error);
-    this.showAlert(error.message);
-  })
-  console.log('Would sign in with ' , this.user.value, this.password.value);
   
-}
+  @ViewChild('username') user;
+  @ViewChild('password') password;
+  
+  registerpage = RegisterPage;
+  constructor( public alertCtrl: AlertController ,private fire:AngularFireAuth ,public navCtrl: NavController, public navParams: NavParams) {
+    //localStorage.userName = this.user.value;
+    //localStorage.setItem(this.user.value, this.password.value);
+     //console.log("you're logged in " +localStorage.userName);
+    }
+    
+    showAlert(message:string){
+      const alert = this.alertCtrl.create({
+        title: 'Info',
+        subTitle: message,
+        buttons: ['OK']
+      }); 
+      alert.present();
+    }
+    
+    
+    
+    signIn(){
+      this.fire.auth.signInWithEmailAndPassword(this.user.value, this.password.value)
+      .then(data => {
+        console.log('got some data' , data);
+        this.showAlert('Hi!  '+this.user.value + ' Success You\'re logged in');
+        localStorage.setItem(this.user.value, 'logged in');
+          
 
+        //console.log(localStorage.getItem)
+        this.navCtrl.push(ModePage);
+        //user os logged in 
+      })
+      .catch(error => {
+        console.log('got an error',error);
+        this.showAlert(error.message);
+      })
+      console.log('Would sign in with ' , this.user.value, this.password.value);
+      
+    }
+    //const storingname: any;
+    
 register(){
   this.navCtrl.push(RegisterPage);
 }
