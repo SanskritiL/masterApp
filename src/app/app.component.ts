@@ -8,14 +8,17 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { ModePage } from '../pages/mode/mode';
 import { HomePage } from '../pages/home/home';
+import { SubmitPage } from '../pages/submit/submit';
 import { HomecreatequizPage } from '../pages/homecreatequiz/homecreatequiz';
+import { StudenthomePage } from '../pages/studenthome/studenthome';
+
 //repo
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   
-  rootPage:any = LoginPage;
+  rootPage:any = StudenthomePage;
   @ViewChild(Nav) nav: Nav;
 
   pages: Array<{ title: string, component: any, icon: string}>;
@@ -27,7 +30,8 @@ export class MyApp {
       {title: 'Logout', component:LoginPage, icon:'md-log-out'},
       {title: 'About Us', component:AboutPage, icon:'md-eye'},
       {title: 'Contact Us', component:ContactPage, icon:'md-contacts'},
-      {title: 'Home', component:HomePage, icon:'md-home'}
+      {title: 'Home', component:HomePage, icon:'md-home'},
+      {title: 'Switch Mode', component:ModePage, icon: 'md-key'}
     ];
       
       
@@ -45,3 +49,9 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 }
+/**{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+} */

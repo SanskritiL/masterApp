@@ -81,7 +81,7 @@ submitQuiz(questions: Questions){
   /**this.quizCode$.push({
      code: this.quizCode.code
   }); */
-  this.navCtrl.push(SubmitPage);
+  this.navCtrl.setRoot(SubmitPage);
 }
 showOptions(){
   this.showAlert("This shoud provide various options like: radio buttons, attach image etc (hopefully)");

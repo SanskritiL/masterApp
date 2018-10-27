@@ -21,10 +21,16 @@
 </ion-header>
 
 <ion-content padding class= "home">
-  <h3 padding> Are you Ready? </h3>
-  <ul>
-    <li *ngFor ="let item of items | async">
-      {{ item | json }}
-    </li>
-  </ul>
+  <h3> Available Quiz </h3>
+  
+
+  <button ion-button icon-start color="secondary" *ngFor="let item of items" (click)="onclick()">
+      
+     {{item.code}}
+     <br>
+    </button>
+  
+
+  
+
   </ion-content>

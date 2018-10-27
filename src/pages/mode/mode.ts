@@ -20,7 +20,7 @@ export class ModePage {
   
     continueToPage(){
       if(this.mode=="teacher"){
-        this.navCtrl.push(TabsPage);
+        this.navCtrl.push(HomePage);
       }
       else{
         this.navCtrl.push(StudenthomePage);
