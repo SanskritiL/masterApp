@@ -20,10 +20,10 @@ export class ModePage {
   
     continueToPage(){
       if(this.mode=="teacher"){
-        this.navCtrl.push(HomePage);
+        this.navCtrl.setRoot(HomePage);
       }
       else{
-        this.navCtrl.push(StudenthomePage);
+        this.navCtrl.setRoot(StudenthomePage);
       }
       
     }

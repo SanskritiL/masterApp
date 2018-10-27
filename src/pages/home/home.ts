@@ -26,7 +26,7 @@ export class HomePage {
   
 onclick(quizCode: QuizCode){
   //console.log(quizCode);
-  this.navCtrl.push(HomecreatequizPage,quizCode);
+  this.navCtrl.setRoot(HomecreatequizPage,quizCode);
 
 //create a new Obj &push under code list
 this.quizCode$.push({

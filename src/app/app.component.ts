@@ -47,9 +47,13 @@ export class MyApp {
   }
   openPage(page){
 
-
-    //console.log(page.title);
+    console.log(page.title);
+    if(page.title == "Logout"){
+      localStorage.clear();
+      this.nav.setRoot(page.component);
+    }else{
     this.nav.setRoot(page.component);
+    }
   }
 }
 /**{

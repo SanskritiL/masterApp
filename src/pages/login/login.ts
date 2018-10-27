@@ -45,11 +45,11 @@ export class LoginPage {
       .then(data => {
         console.log('got some data' , data);
         this.showAlert('Hi!  '+this.user.value + ' Success You\'re logged in');
-        localStorage.setItem(this.user.value, 'logged in');
+        localStorage.setItem(this.user.value,"logged in");
           
 
         //console.log(localStorage.getItem)
-        this.navCtrl.push(ModePage);
+        this.navCtrl.setRoot(ModePage);
         //user os logged in 
       })
       .catch(error => {
