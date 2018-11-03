@@ -48,6 +48,6 @@ export class StudenthomePage {
     console.log('ionViewDidLoad StudenthomePage');
   }
 onclick(){
-  this.showAlert('"UNDER CONSTRCTION" Questions are stored in database but necessary text fields are not created.');
+  this.showAlert('"UNDER CONSTRCTION" Questions are stored in database but necessary text fields are yet to be created.');
 }
 }

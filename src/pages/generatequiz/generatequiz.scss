@@ -1,0 +1,77 @@
+page-generatequiz {
+  .addPic {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 30%;
+    overflow: hidden;
+    background-color: rgb(189, 180, 180);
+    .cam {
+      display: inline-block;
+      margin: auto;
+      position: absolute;
+      top: 10%;
+      right: 50%;
+      font-size: 30px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .more {
+      font-size: 23px;
+      margin-right: 2%;
+      float: right;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    h6 {
+      display: inline-block;
+      margin: auto;
+
+      align-self: center;
+      margin-top: 20%;
+      margin-left: 42%;
+    }
+  }
+}
+
+.infoonquiz {
+  padding: 0.2rem;
+  background-color: rgb(106, 121, 134);
+  height: 80vh;
+  .topic {
+    display: inline-block;
+    color: black;
+    margin-left: 8px;
+    ::placeholder {
+      color: black;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .edit {
+    margin-top: 5px;
+    border-radius: 20%;
+    border: 2px solid rgb(189, 180, 180);
+    margin-left: 8px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .play {
+    font-size: 20px;
+    margin-left: 3rem;
+    padding: 0.6rem;
+    border: 2px solid black;
+    border-radius: 20%;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+}
