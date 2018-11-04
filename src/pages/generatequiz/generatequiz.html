@@ -5,24 +5,34 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>Create Quiz</ion-title>
+    <ion-title>
+
+      Quizy
+      <img id="logo" height="40" src="assets/imgs/monster.png">
+
+    </ion-title>
+
+    <button ion-button icon-only menuToggle>
+      <ion-icon name='menu'></ion-icon>
+    </button>
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content>
   <div class="addPic">
-    <ion-icon class="cam" name="camera"> </ion-icon>
-    <h6>Add image</h6>
+    <ion-icon class="cam" name="camera" (click)="attachpic()"> <br>
+      <h6>Add</h6>
+    </ion-icon>
+
 
     <ion-icon class="more" name="more"></ion-icon>
 
   </div>
   <div class="infoonquiz">
-    <h6 padding> Quiz code: csci 120</h6>
+
+    <h6 padding> Quiz code: {{code}} </h6>
+
     <ion-icon padding class="docx" name="document"> Created on: 2018/11/03 13:38:26</ion-icon>
 
     <ion-input class="topic" type="text" placeholder="What topic is your questionaire on?"></ion-input>

@@ -23,6 +23,9 @@ import { AngularFireAuthModule } from "angularfire2/auth";
 import { SubmitPage } from "../pages/submit/submit";
 import { GeneratequizPage } from "../pages/generatequiz/generatequiz";
 import { AngularFirestoreModule } from "angularfire2/firestore";
+import { AuthServiceProvider } from "../providers/auth-service/auth-service";
+import { File } from "@ionic-native/file";
+import { FileChooser } from "@ionic-native/file-chooser";
 
 const firebaseAuth = {
   apiKey: "AIzaSyAxmfAkO59ADMlC2ro6a3pz8wQhjpE5AhI",
@@ -82,7 +85,10 @@ const firebaseAuth = {
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    FileChooser,
+    File,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    AuthServiceProvider
   ]
 })
 export class AppModule {}
