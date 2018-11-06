@@ -26,6 +26,9 @@ import { AngularFirestoreModule } from "angularfire2/firestore";
 import { AuthServiceProvider } from "../providers/auth-service/auth-service";
 import { File } from "@ionic-native/file";
 import { FileChooser } from "@ionic-native/file-chooser";
+import { storage } from "firebase";
+import { Camera } from "@ionic-native/camera";
+import { CreatequizPage } from "../pages/createquiz/createquiz";
 
 const firebaseAuth = {
   apiKey: "AIzaSyAxmfAkO59ADMlC2ro6a3pz8wQhjpE5AhI",
@@ -52,7 +55,8 @@ const firebaseAuth = {
     ForgotpwPage,
     SubmitPage,
     NewmodePage,
-    GeneratequizPage
+    GeneratequizPage,
+    CreatequizPage
   ],
   imports: [
     BrowserModule,
@@ -78,7 +82,8 @@ const firebaseAuth = {
     ForgotpwPage,
     SubmitPage,
     NewmodePage,
-    GeneratequizPage
+    GeneratequizPage,
+    CreatequizPage
     //new comment to see
   ],
   //repo
@@ -86,6 +91,7 @@ const firebaseAuth = {
     StatusBar,
     SplashScreen,
     FileChooser,
+    Camera,
     File,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthServiceProvider

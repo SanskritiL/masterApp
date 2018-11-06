@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the NewmodepagePage page.
+ * Generated class for the CreatequizPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-newmodepage',
-  templateUrl: 'newmodepage.html',
+  selector: 'page-createquiz',
+  templateUrl: 'createquiz.html',
 })
-export class NewmodepagePage {
+export class CreatequizPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NewmodepagePage');
+    console.log('ionViewDidLoad CreatequizPage');
   }
 
 }

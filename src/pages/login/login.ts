@@ -10,6 +10,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { ModePage } from "../mode/mode";
 import { ForgotpwPage } from "../forgotpw/forgotpw";
 import { NewmodePage } from "../newmode/newmode";
+import { Users } from "../../models/quizcodeitem/quizcode.interface";
 
 @Component({
   selector: "page-login",
@@ -20,6 +21,7 @@ export class LoginPage {
   user;
   @ViewChild("password")
   password;
+  users = {} as Users;
 
   registerpage = RegisterPage;
   constructor(
@@ -51,7 +53,7 @@ export class LoginPage {
         localStorage.setItem(this.user.value, "logged in");
 
         //console.log(localStorage.getItem)
-        this.navCtrl.setRoot(NewmodePage);
+        this.navCtrl.push(NewmodePage, { users: this.user.value });
         //user os logged in
       })
       .catch(error => {

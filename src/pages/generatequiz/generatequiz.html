@@ -21,25 +21,22 @@
 
 <ion-content>
   <div class="addPic">
-    <ion-icon class="cam" name="camera" (click)="attachpic()"> <br>
-      <h6>Add</h6>
-    </ion-icon>
-
-
-    <ion-icon class="more" name="more"></ion-icon>
+    <img src="assets/imgs/main.jpg">
 
   </div>
   <div class="infoonquiz">
 
     <h6 padding> Quiz code: {{code}} </h6>
 
-    <ion-icon padding class="docx" name="document"> Created on: 2018/11/03 13:38:26</ion-icon>
+    <ion-icon padding class="docx" name="document"> Created on: {{dt}}</ion-icon>
+    <br>
+    <ion-icon padding class="name" name="document"> Created by: {{nickname}}</ion-icon>
 
-    <ion-input class="topic" type="text" placeholder="What topic is your questionaire on?"></ion-input>
+    <ion-input placeholder="What topic is your questionaire on?" [(ngModel)]="quiztopic"></ion-input>
 
 
 
-    <button padding class="edit ">Edit quiz</button>
+    <button padding class="edit " (click)="sendtodb()">Create quiz</button>
     <ion-icon class="play" name="play"></ion-icon>
 
 
