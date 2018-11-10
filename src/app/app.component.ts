@@ -13,13 +13,14 @@ import { HomecreatequizPage } from "../pages/homecreatequiz/homecreatequiz";
 import { StudenthomePage } from "../pages/studenthome/studenthome";
 import { NewmodePage } from "../pages/newmode/newmode";
 import { GeneratequizPage } from "../pages/generatequiz/generatequiz";
+import { CreatequizPage } from "../pages/createquiz/createquiz";
 
 //repo
 @Component({
   templateUrl: "app.html"
 })
 export class MyApp {
-  rootPage: any = GeneratequizPage;
+  rootPage: any = CreatequizPage;
   @ViewChild(Nav)
   nav: Nav;
 

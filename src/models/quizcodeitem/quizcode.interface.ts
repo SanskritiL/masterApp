@@ -16,3 +16,12 @@ export interface QuizInfo {
   nickname: String;
   quiztopic: any;
 }
+
+export interface MainContent {
+  question: String;
+  comment: String;
+  answer1: String;
+  answer2: String;
+  answer3: String;
+  answer4: String;
+}

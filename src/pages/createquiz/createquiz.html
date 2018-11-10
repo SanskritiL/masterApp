@@ -22,4 +22,59 @@
 
 <ion-content padding class="home">
 
+  <h6>Quiz code: {{code}}</h6>
+  <h6>{{nickname}},</h6>
+  <form [formGroup]="form">
+
+    <div formArrayName="questions">
+
+      <section *ngFor="let t of form.controls.questions.controls; let i = index">
+        <div class="boxes">
+          Number_ {{i+1}}
+
+          <br>
+          <h6>Question: <span>
+              <ion-input placeholder="Your question..." #mainquestion></ion-input>
+            </span>
+          </h6>
+
+
+          <h5>Answers: </h5>
+
+
+          <div class="
+                smallbox">
+
+            <ion-checkbox disabled="false"></ion-checkbox>
+            <input placeholder="Answer 1" #num1>
+            <br>
+
+            <ion-checkbox></ion-checkbox>
+            <input type="text" placeholder="Answer 2" #num2>
+
+            <br>
+            <ion-checkbox></ion-checkbox>
+            <input type="text" placeholder="Answer 3" #num3>
+            <br>
+            <ion-checkbox></ion-checkbox>
+            <input type="text" placeholder="Answer 4" #num4>
+
+
+          </div>
+
+          <h6>Comment:</h6><span>
+            <ion-input placeholder="Add comments/hints" #maincomment></ion-input>
+          </span>
+          <ion-icon class="remove" (click)="remove(i)">X</ion-icon>
+        </div>
+      </section>
+    </div>
+    <ion-icon class="add" name="add" (click)="add()"></ion-icon> <span>
+      <ion-icon class="sub" (click)="submit(questions)">Submit</ion-icon>
+    </span>
+
+  </form>
+
+
+
 </ion-content>

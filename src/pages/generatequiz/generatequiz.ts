@@ -53,15 +53,16 @@ export class GeneratequizPage {
 
   sendtodb() {
     console.log(this.quiztopic);
-    const quizinfoRef = this.quizinfo$.push({
+    /*const quizinfoRef = this.quizinfo$.push({
       date: this.dt,
       code: this.code,
       nickname: this.nickname,
       quiztopic: this.quiztopic
     });
+    */
     this.navCtrl.push(CreatequizPage, {
       code: this.code,
-      quiztopic: this.quiztopic
+      nickname: this.nickname
     });
   }
 }

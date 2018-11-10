@@ -1,3 +1,56 @@
 page-createquiz {
+  .boxes {
+    display: block;
+    margin: auto;
+    width: 87%;
+    margin-top: 4vh;
+    padding: 6px;
+    border: 2px solid white;
+    background-color: #103357;
+  }
+}
 
+.smallbox ion-input {
+  // display: inline;
+}
+ion-checkbox input {
+  color: black;
+}
+form {
+  margin-top: 5px;
+}
+.add {
+  font-size: 30px;
+  color: "go";
+  border: 2px solid white;
+  padding: 7px;
+  border-radius: 46%;
+  float: bottom;
+  background-color: #103357;
+  cursor: pointer;
+  margin-top: 10vh;
+}
+.remove {
+  font-size: 15px;
+  border: 2px solid white;
+  padding: 7px;
+  background-color: #b66764;
+  cursor: pointer;
+}
+.smallbox input {
+  //background-color: black;
+  color: black;
+  font-weight: bold;
+}
+
+.sub {
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid white;
+  padding: 7px;
+  border-radius: 23%;
+  background-color: #59a378;
+  cursor: pointer;
+  float: right;
+  margin-top: 10vh;
 }
