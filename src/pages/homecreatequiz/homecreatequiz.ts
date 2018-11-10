@@ -127,7 +127,4 @@ export class HomecreatequizPage {
   showOptions() {
     this.showAlert("Select Question type");
   }
-  manage(val: any): void {
-    //console.dir(val);
-  }
 }

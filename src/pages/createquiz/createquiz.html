@@ -1,80 +1,95 @@
 <!--
   Generated template for the CreatequizPage page.
-
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
   <ion-navbar>
     <ion-title>
-
-      Quizy
-      <img id="logo" height="40" src="assets/imgs/monster.png">
-
+      Quizy <img id="logo" height="40" src="assets/imgs/monster.png" />
     </ion-title>
 
     <button ion-button icon-only menuToggle>
-      <ion-icon name='menu'></ion-icon>
+      <ion-icon name="menu"></ion-icon>
     </button>
   </ion-navbar>
 </ion-header>
 
-
 <ion-content padding class="home">
-
-  <h6>Quiz code: {{code}}</h6>
-  <h6>{{nickname}},</h6>
+  <h6>Quiz code: {{ code }}</h6>
+  <h6>{{ nickname }},</h6>
   <form [formGroup]="form">
-
     <div formArrayName="questions">
-
-      <section *ngFor="let t of form.controls.questions.controls; let i = index">
+      <section
+        [formGroupName]="i"
+        *ngFor="let t of form.controls.questions.controls; let i = index"
+      >
         <div class="boxes">
-          Number_ {{i+1}}
+          Number_ {{ i + 1 }}
 
-          <br>
-          <h6>Question: <span>
-              <ion-input placeholder="Your question..." #mainquestion></ion-input>
+          <br />
+          <h6>
+            Question:
+            <span>
+              <ion-input
+                placeholder="Your question..."
+                #mainquestion
+                formControlName="question"
+              ></ion-input>
             </span>
           </h6>
 
+          <h5>Answers:</h5>
 
-          <h5>Answers: </h5>
-
-
-          <div class="
-                smallbox">
-
+          <div
+            class="
+                  smallbox"
+          >
             <ion-checkbox disabled="false"></ion-checkbox>
-            <input placeholder="Answer 1" #num1>
-            <br>
+            <input formControlName="answer1" placeholder="Answer 1" #num1 />
+            <br />
 
             <ion-checkbox></ion-checkbox>
-            <input type="text" placeholder="Answer 2" #num2>
+            <input
+              formControlName="answer2"
+              type="text"
+              placeholder="Answer 2"
+              #num2
+            />
 
-            <br>
+            <br />
             <ion-checkbox></ion-checkbox>
-            <input type="text" placeholder="Answer 3" #num3>
-            <br>
+            <input
+              formControlName="answer3"
+              type="text"
+              placeholder="Answer 3"
+              #num3
+            />
+            <br />
             <ion-checkbox></ion-checkbox>
-            <input type="text" placeholder="Answer 4" #num4>
-
-
+            <input
+              formControlName="answer4"
+              type="text"
+              placeholder="Answer 4"
+              #num4
+            />
           </div>
 
-          <h6>Comment:</h6><span>
-            <ion-input placeholder="Add comments/hints" #maincomment></ion-input>
+          <h6>Comment:</h6>
+          <span>
+            <ion-input
+              formControlName="comment"
+              placeholder="Add comments/hints"
+              #maincomment
+            ></ion-input>
           </span>
           <ion-icon class="remove" (click)="remove(i)">X</ion-icon>
         </div>
       </section>
     </div>
-    <ion-icon class="add" name="add" (click)="add()"></ion-icon> <span>
-      <ion-icon class="sub" (click)="submit(questions)">Submit</ion-icon>
+    <ion-icon class="add" name="add" (click)="add()"></ion-icon>
+    <span>
+      <ion-icon class="sub" (click)="manage(form.value)">Submit</ion-icon>
     </span>
-
   </form>
-
-
-
 </ion-content>

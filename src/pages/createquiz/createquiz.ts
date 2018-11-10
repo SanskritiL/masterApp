@@ -63,31 +63,22 @@ export class CreatequizPage {
   ) {
     //define the formgroup object for the form with subgroup objets for handling dynamically generated form input fields
     this.form = this._FB.group({
-      name: ["", Validators.required],
       questions: this._FB.array([this.initquestionField()])
     });
+  }
 
-    this.formsmall = this._FB.group({
-      answers: this._FB.array([this.initanswerField()])
-    });
-  }
-  initanswerField() {
-    return this._FB.group({});
-  }
   //creating a method initquestionFields that generates a form group object with input field
   initquestionField() {
     return this._FB.group({
-      name: ["", Validators.required]
+      question: ["", Validators.required],
+      comment: ["", Validators.required],
+      answer1: ["", Validators.required],
+      answer2: ["", Validators.required],
+      answer3: ["", Validators.required],
+      answer4: ["", Validators.required]
     });
   }
-  addanswers() {
-    const control = <FormArray>this.formsmall.controls.answers;
-    control.push(this.initanswerField());
-  }
-  removeanswers(i: number) {
-    const control = <FormArray>this.formsmall.controls.answers;
-    control.removeAt(i);
-  }
+
   //programmetically generates a new technology input field
   add() {
     const control = <FormArray>this.form.controls.questions;
