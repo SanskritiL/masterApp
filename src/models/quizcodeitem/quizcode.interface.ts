@@ -18,10 +18,12 @@ export interface QuizInfo {
 }
 
 export interface MainContent {
+  code: String;
   question: String;
   comment: String;
   answer1: String;
   answer2: String;
   answer3: String;
   answer4: String;
+  correctanswer: String;
 }

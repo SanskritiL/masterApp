@@ -29,6 +29,7 @@ import { FileChooser } from "@ionic-native/file-chooser";
 import { storage } from "firebase";
 import { Camera } from "@ionic-native/camera";
 import { CreatequizPage } from "../pages/createquiz/createquiz";
+import { RealquizPage } from "../pages/realquiz/realquiz";
 
 const firebaseAuth = {
   apiKey: "AIzaSyAxmfAkO59ADMlC2ro6a3pz8wQhjpE5AhI",
@@ -56,7 +57,8 @@ const firebaseAuth = {
     SubmitPage,
     NewmodePage,
     GeneratequizPage,
-    CreatequizPage
+    CreatequizPage,
+    RealquizPage
   ],
   imports: [
     BrowserModule,
@@ -83,7 +85,8 @@ const firebaseAuth = {
     SubmitPage,
     NewmodePage,
     GeneratequizPage,
-    CreatequizPage
+    CreatequizPage,
+    RealquizPage
     //new comment to see
   ],
   //repo

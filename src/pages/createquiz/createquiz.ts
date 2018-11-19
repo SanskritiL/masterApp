@@ -5,6 +5,7 @@ import {
   NavParams,
   AlertController
 } from "ionic-angular";
+import { AngularFireDatabase } from "angularfire2/database";
 import {
   QuizCode,
   Users,
@@ -15,7 +16,7 @@ import {
 import { FormBuilder, FormArray, FormGroup, Validators } from "@angular/forms";
 import { AngularFireList } from "angularfire2/database";
 import { controlNameBinding } from "@angular/forms/src/directives/reactive_directives/form_control_name";
-
+import { NewmodePage } from "../newmode/newmode";
 /**
  * Generated class for the CreatequizPage page.
  *
@@ -33,6 +34,8 @@ export class CreatequizPage {
   public formsmall: FormGroup;
   j = 0;
   u = 0;
+  correctanswer = 0;
+  correctanswers = [];
   counter = 1;
   code = this.navParams.get("code");
   nickname = this.navParams.get("nickname");
@@ -59,8 +62,11 @@ export class CreatequizPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private _FB: FormBuilder
+    private _FB: FormBuilder,
+    public alertCtrl: AlertController,
+    public db: AngularFireDatabase
   ) {
+    this.maincontent$ = db.list("quizcontent");
     //define the formgroup object for the form with subgroup objets for handling dynamically generated form input fields
     this.form = this._FB.group({
       questions: this._FB.array([this.initquestionField()])
@@ -83,32 +89,62 @@ export class CreatequizPage {
   add() {
     const control = <FormArray>this.form.controls.questions;
     control.push(this.initquestionField());
+    this.correctanswers[this.counter - 1] = this.correctanswer;
+
     this.counter++;
   }
 
   remove(i: number) {
     const control = <FormArray>this.form.controls.questions;
     control.removeAt(i);
+    this.counter--;
+    this.correctanswers.pop();
   }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad CreatequizPage");
   }
 
-  submit(questions: Questions) {
-    console.log("submitted");
-    for (this.u = 0; this.u < this.counter; this.u++) {
-      const control = <FormArray>this.form.controls.questions[this.u];
-
-      console.log(this.MainQuestion.value);
-      console.log(this.MainComment.value);
-      console.log(this.Num1.nativeElement.value);
-      console.log(this.Num2.nativeElement.value);
-      console.log(this.Num3.nativeElement.value);
-      console.log(this.Num4.nativeElement.value);
-    }
+  togglecheckbox(x: any) {
+    this.correctanswer = x - 1;
   }
+
   manage(val: any): void {
-    console.dir(val);
+    console.log(
+      "yaha bata"
+    ); /*
+    this.correctanswers.push(this.correctanswer);
+    for (this.j = 0; this.j < this.counter; this.j++) {
+      this.maincontent$.push({
+        code: this.code,
+        question: val["questions"][this.j]["question"],
+        comment: val["questions"][this.j]["comment"],
+        answer1: val["questions"][this.j]["answer1"],
+        answer2: val["questions"][this.j]["answer2"],
+        answer3: val["questions"][this.j]["answer3"],
+        answer4: val["questions"][this.j]["answer4"],
+        correctanswer: this.correctanswers[this.j]
+      });
+    }
+     */
+    this.presentAlert();
+  }
+  presentAlert() {
+    let alert = this.alertCtrl.create({
+      title: "Great!",
+      subTitle: "Your quiz has been created",
+      buttons: [
+        {
+          text: "Ok"
+        },
+        {
+          text: "View My Quiz",
+          handler: () => {
+            this.navCtrl.push(NewmodePage, { nickol: this.nickname });
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 }

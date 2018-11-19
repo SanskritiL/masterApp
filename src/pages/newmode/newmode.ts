@@ -11,6 +11,7 @@ import {
   Questions
 } from "../../models/quizcodeitem/quizcode.interface";
 import { LoginPage } from "../login/login";
+import { RealquizPage } from "../realquiz/realquiz";
 /**
  * Generated class for the NewmodePage page.
  *
@@ -34,14 +35,28 @@ export class NewmodePage {
     public navParams: NavParams,
     public db: AngularFireDatabase,
     public fire: AngularFireAuth
-  ) {}
+  ) {
+    this.db
+      .list("quizinfo")
+      .valueChanges()
+      .subscribe(data => {
+        //console.log(data[0]);
+        this.items = data;
+      });
+    console.log("hi");
+  }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad NewmodePage");
-
-    this.admin = this.navParams.get("users");
-    console.log(this.admin);
-    this.getnickname();
+    try {
+      this.nickname = this.navParams.get("nickol");
+      console.log("if");
+    } catch {
+      this.admin = this.navParams.get("users");
+      console.log(this.admin);
+      this.getnickname();
+      console.log("else");
+    }
   }
   getnickname() {
     this.db
@@ -61,5 +76,11 @@ export class NewmodePage {
     console.log("pass huda home page ma");
     console.log(this.nickname);
     this.navCtrl.push(HomePage, { users: this.nickname });
+  }
+  onclick(item: any) {
+    console.log(item);
+    this.navCtrl.push(RealquizPage, {
+      code: item
+    });
   }
 }

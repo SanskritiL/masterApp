@@ -1,20 +1,32 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Quizy
-      <img id="logo" height="40" src="assets/imgs/monster.png">
+      Quizy <img id="logo" height="40" src="assets/imgs/monster.png" />
     </ion-title>
     <button ion-button icon-only menuToggle>
-      <ion-icon name='menu'></ion-icon>
+      <ion-icon name="menu"></ion-icon>
     </button>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="home">
   <div class="newmode">
-    <h2 class="text">Hi {{nickname}} ! Your Creations</h2>
+    <h2 class="text">Hi {{ nickname }} ! Your Creations</h2>
 
-
+    <br />
+    <button
+      class="code"
+      ion-button
+      icon-start
+      color="secondary"
+      *ngFor="let item of items; let i = index"
+      (click)="onclick(item.code)"
+    >
+      <div class="hey">
+        <h3>{{ item.code }}</h3>
+        <h6>{{ item.quiztopic }} <br />Created by: {{ item.nickname }}</h6>
+      </div>
+    </button>
 
     <ion-icon name="add-circle" (click)="taketohome()"></ion-icon>
   </div>

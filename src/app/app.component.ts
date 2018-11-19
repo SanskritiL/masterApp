@@ -20,7 +20,7 @@ import { CreatequizPage } from "../pages/createquiz/createquiz";
   templateUrl: "app.html"
 })
 export class MyApp {
-  rootPage: any = CreatequizPage;
+  rootPage: any = NewmodePage;
   @ViewChild(Nav)
   nav: Nav;
 

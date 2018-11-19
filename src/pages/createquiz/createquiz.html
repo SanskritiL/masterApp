@@ -45,11 +45,11 @@
             class="
                   smallbox"
           >
-            <ion-checkbox disabled="false"></ion-checkbox>
+            <ion-checkbox id="1" (click)="togglecheckbox(1)"> </ion-checkbox>
             <input formControlName="answer1" placeholder="Answer 1" #num1 />
             <br />
 
-            <ion-checkbox></ion-checkbox>
+            <ion-checkbox id="2" (click)="togglecheckbox(2)"></ion-checkbox>
             <input
               formControlName="answer2"
               type="text"
@@ -58,7 +58,7 @@
             />
 
             <br />
-            <ion-checkbox></ion-checkbox>
+            <ion-checkbox id="3" (click)="togglecheckbox(3)"></ion-checkbox>
             <input
               formControlName="answer3"
               type="text"
@@ -66,7 +66,7 @@
               #num3
             />
             <br />
-            <ion-checkbox></ion-checkbox>
+            <ion-checkbox id="4" (click)="togglecheckbox(4)"></ion-checkbox>
             <input
               formControlName="answer4"
               type="text"
@@ -83,6 +83,7 @@
               #maincomment
             ></ion-input>
           </span>
+
           <ion-icon class="remove" (click)="remove(i)">X</ion-icon>
         </div>
       </section>
