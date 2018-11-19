@@ -20,7 +20,7 @@ import { CreatequizPage } from "../pages/createquiz/createquiz";
   templateUrl: "app.html"
 })
 export class MyApp {
-  rootPage: any = NewmodePage;
+  rootPage: any = LoginPage;
   @ViewChild(Nav)
   nav: Nav;
 
@@ -37,8 +37,7 @@ export class MyApp {
       { title: "Logout", component: LoginPage, icon: "md-log-out" },
       { title: "About Us", component: AboutPage, icon: "md-eye" },
       { title: "Contact Us", component: ContactPage, icon: "md-contacts" },
-      { title: "Home", component: HomePage, icon: "md-home" },
-      { title: "Switch Mode", component: ModePage, icon: "md-key" }
+      { title: "Home", component: NewmodePage, icon: "md-home" }
     ];
   }
   initializeApp() {

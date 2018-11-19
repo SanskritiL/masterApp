@@ -28,6 +28,7 @@ export class NewmodePage {
   items: any;
   admin = "";
   i = 0;
+  index = 0;
   nickname = "";
   users = {} as Users;
   constructor(
@@ -48,26 +49,37 @@ export class NewmodePage {
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad NewmodePage");
-    try {
+
+    /* try {
       this.nickname = this.navParams.get("nickol");
       console.log("if");
-    } catch {
-      this.admin = this.navParams.get("users");
-      console.log(this.admin);
-      this.getnickname();
-      console.log("else");
-    }
+      console.log("kasar cgalyo");
+    } catch (Error) {
+      */
+    this.admin = this.navParams.get("users");
+    console.log(this.admin);
+
+    this.db
+
+      .list("users")
+      .valueChanges()
+      .subscribe(datas => {
+        this.getnickname(datas.length);
+      });
+
+    console.log("else");
   }
-  getnickname() {
+
+  getnickname(number) {
     this.db
       .list("users")
       .valueChanges()
-      .subscribe(data => {
-        this.items = data;
-        for (this.i = 0; this.i < 3; this.i++) {
-          if (data[this.i]["email"] == this.admin) {
-            console.log(data[this.i]["nickname"]);
-            this.nickname = data[this.i]["nickname"];
+      .subscribe(datas => {
+        //this.items = datas;
+        for (this.i = 0; this.i < number; this.i++) {
+          if (datas[this.i]["email"] == this.admin) {
+            console.log(datas[this.i]["nickname"]);
+            this.nickname = datas[this.i]["nickname"];
           }
         }
       });

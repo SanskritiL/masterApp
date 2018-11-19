@@ -110,9 +110,7 @@ export class CreatequizPage {
   }
 
   manage(val: any): void {
-    console.log(
-      "yaha bata"
-    ); /*
+    console.log("yaha bata");
     this.correctanswers.push(this.correctanswer);
     for (this.j = 0; this.j < this.counter; this.j++) {
       this.maincontent$.push({
@@ -126,7 +124,7 @@ export class CreatequizPage {
         correctanswer: this.correctanswers[this.j]
       });
     }
-     */
+
     this.presentAlert();
   }
   presentAlert() {
@@ -140,7 +138,7 @@ export class CreatequizPage {
         {
           text: "View My Quiz",
           handler: () => {
-            this.navCtrl.push(NewmodePage, { nickol: this.nickname });
+            this.navCtrl.setRoot(NewmodePage, { nickol: this.nickname });
           }
         }
       ]

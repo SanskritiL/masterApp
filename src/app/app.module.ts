@@ -30,6 +30,7 @@ import { storage } from "firebase";
 import { Camera } from "@ionic-native/camera";
 import { CreatequizPage } from "../pages/createquiz/createquiz";
 import { RealquizPage } from "../pages/realquiz/realquiz";
+import { CongratsPage } from "../pages/congrats/congrats";
 
 const firebaseAuth = {
   apiKey: "AIzaSyAxmfAkO59ADMlC2ro6a3pz8wQhjpE5AhI",
@@ -58,7 +59,8 @@ const firebaseAuth = {
     NewmodePage,
     GeneratequizPage,
     CreatequizPage,
-    RealquizPage
+    RealquizPage,
+    CongratsPage
   ],
   imports: [
     BrowserModule,
@@ -86,7 +88,8 @@ const firebaseAuth = {
     NewmodePage,
     GeneratequizPage,
     CreatequizPage,
-    RealquizPage
+    RealquizPage,
+    CongratsPage
     //new comment to see
   ],
   //repo

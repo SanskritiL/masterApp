@@ -13,4 +13,35 @@
   <h3>Hi! You are taking: {{ codeVal }} quiz</h3>
 
   <br /><br />
+  <div *ngFor="let i of array; let j = index">
+    <div class="body">
+      <h5>Question no. {{ j + 1 }}</h5>
+      {{ i.question }}
+
+      <ul>
+        <ion-checkbox (click)="toggle(0)"></ion-checkbox>
+        {{
+          i.answer1
+        }}
+        <br />
+        <ion-checkbox (click)="toggle(1)"></ion-checkbox>
+        {{
+          i.answer2
+        }}
+        <br />
+        <ion-checkbox (click)="toggle(2)"></ion-checkbox>
+        {{
+          i.answer3
+        }}
+        <br />
+        <ion-checkbox (click)="toggle(3)"></ion-checkbox>
+        {{
+          i.answer4
+        }}
+        <br />
+      </ul>
+      <h6 class="com">Comments: {{ i.comment }}</h6>
+    </div>
+  </div>
+  <button class="sub" (click)="submit()">Submit</button>
 </ion-content>
