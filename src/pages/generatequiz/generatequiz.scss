@@ -24,13 +24,17 @@ page-generatequiz {
   padding: 0.2rem;
   background-color: #83a2d6;
   height: 80vh;
+  h6 {
+    font-size: 15px;
+  }
+  ::placeholder {
+    color: rgb(82, 74, 74);
+  }
   .topic {
     display: inline-block;
     color: black;
     margin-left: 8px;
-    ::placeholder {
-      color: black;
-    }
+
     &:hover {
       cursor: pointer;
     }
