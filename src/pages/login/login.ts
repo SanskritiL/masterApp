@@ -29,11 +29,7 @@ export class LoginPage {
     private fire: AngularFireAuth,
     public navCtrl: NavController,
     public navParams: NavParams
-  ) {
-    //localStorage.userName = this.user.value;
-    //localStorage.setItem(this.user.value, this.password.value);
-    //console.log("you're logged in " +localStorage.userName);
-  }
+  ) {}
 
   showAlert(message: string) {
     const alert = this.alertCtrl.create({
@@ -50,9 +46,14 @@ export class LoginPage {
       .then(data => {
         console.log("got some data", data);
         this.showAlert("Hi!  " + this.user.value + " Success You're logged in");
-        localStorage.setItem(this.user.value, "logged in");
+        localStorage.setItem("user", this.user.value);
 
-        //console.log(localStorage.getItem)
+        console.log("locally");
+
+        console.log(localStorage.getItem("user"));
+
+        console.log("hole");
+
         this.navCtrl.push(NewmodePage, { users: this.user.value });
         //user os logged in
       })

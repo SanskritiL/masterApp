@@ -56,7 +56,9 @@ export class NewmodePage {
       console.log("kasar cgalyo");
     } catch (Error) {
       */
-    this.admin = this.navParams.get("users");
+    this.admin = localStorage.getItem("user").toString();
+    //this.navParams.get("users");
+    //this.admin= localStorage.getItem("this.user.value")
     console.log(this.admin);
 
     this.db

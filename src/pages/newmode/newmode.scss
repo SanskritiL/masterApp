@@ -25,11 +25,16 @@
 .code {
   width: 150px;
   height: 100px;
-  background: url("../../assets/imgs/hey.jpg");
+  background-image: url("assets/imgs/hey.jpg");
   background-position: center;
 
   padding: 5px;
 }
+
+.newmode button {
+  margin-right: 8px;
+}
+
 .hey {
   width: 100px;
   height: 50px;
